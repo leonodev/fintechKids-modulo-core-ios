@@ -20,6 +20,15 @@
       }
     },
     {
+      "identity" : "fintechkids-modulo-config-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/leonodev/fintechKids-modulo-config-ios.git",
+      "state" : {
+        "revision" : "003b211d77547e385d028a403e34580afb1e17a2",
+        "version" : "1.0.5"
+      }
+    },
+    {
       "identity" : "fintechkids-modulo-utils-ios",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/leonodev/fintechKids-modulo-utils-ios.git",

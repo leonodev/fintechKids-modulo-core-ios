@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Production</key>
+	<dict>
+		<key>EN</key>
+		<dict>
+			<key>supabase</key>
+			<string>https://chaukyiczbxkkbnxgahi.supabase.co</string>
+		</dict>
+		<key>FR</key>
+		<dict>
+			<key>supabase</key>
+			<string>https://chaukyiczbxkkbnxgahi.supabase.fr</string>
+		</dict>
+		<key>IT</key>
+		<dict>
+			<key>supabase</key>
+			<string>https://chaukyiczbxkkbnxgahi.supabase.it</string>
+		</dict>
+		<key>ES</key>
+		<dict>
+			<key>supabase</key>
+			<string>https://chaukyiczbxkkbnxgahi.supabase.co</string>
+		</dict>
+	</dict>
+	<key>Develop</key>
+	<dict>
+		<key>EN</key>
+		<dict>
+			<key>supabase</key>
+			<string>https://chaukyiczbxkkbnxgahi.supabase.co</string>
+		</dict>
+		<key>FR</key>
+		<dict>
+			<key>supabase</key>
+			<string>https://dev_chaukyiczbxkkbnxgahi.supabase.fr</string>
+		</dict>
+		<key>IT</key>
+		<dict>
+			<key>supabase</key>
+			<string>https://dev_chaukyiczbxkkbnxgahi.supabase.it</string>
+		</dict>
+		<key>ES</key>
+		<dict>
+			<key>supabase</key>
+			<string>https://chaukyiczbxkkbnxgahi.supabase.co</string>
+		</dict>
+	</dict>
+</dict>
+</plist>
