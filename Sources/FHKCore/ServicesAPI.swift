@@ -23,8 +23,8 @@ public struct ServicesAPI {
     private static let plistFileName = "ServicesAPI"
     private static let plistExtension = "plist"
     
-    public static func getURL(environment: Configuration.EnvironmentType,
-                              language: Configuration.LanguageType,
+    public static func getURL(environment: Configuration.EnvironmentType = Configuration.getEnvironment(),
+                              language: Configuration.LanguageType = Configuration.getLanguage(),
                               serviceKey: ServiceType) throws -> String {
         
         guard let url = Bundle.module.url(forResource: plistFileName, withExtension: plistExtension) else {

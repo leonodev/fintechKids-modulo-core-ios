@@ -21,8 +21,7 @@ let package = Package(
         .package(url: "https://github.com/leonodev/fintechKids-modulo-utils-ios.git",
                  exact: "1.0.2"),
         
-        .package(url: "https://github.com/leonodev/fintechKids-modulo-config-ios.git",
-                 exact: "1.0.5")
+        .package(url: "https://github.com/leonodev/fintechKids-modulo-config-ios.git", branch: "main")
         ],
     targets: [
         .target(
