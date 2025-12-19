@@ -6,12 +6,15 @@
 //
 
 import SwiftUI
+import FHKCore
 
 @main
 struct FHKCoreDemoApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationContainer<AuthRoute, ContentView> {
+                ContentView()
+            }
         }
     }
 }
