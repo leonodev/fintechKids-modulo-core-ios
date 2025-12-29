@@ -25,7 +25,16 @@
       "location" : "https://github.com/leonodev/fintechKids-modulo-config-ios.git",
       "state" : {
         "branch" : "main",
-        "revision" : "adee4212a26c50c422f6019fe326005da94372a5"
+        "revision" : "563e4f33398f414b0b5d2a6218a828111fbba175"
+      }
+    },
+    {
+      "identity" : "fintechkids-modulo-core-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/leonodev/fintechKids-modulo-core-ios.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "b60e540b0b1a85a6edcd833986b281114dc49297"
       }
     },
     {
@@ -35,6 +44,15 @@
       "state" : {
         "revision" : "4396fc3904b008771d0748ab60cce4c948e1db16",
         "version" : "1.0.4"
+      }
+    },
+    {
+      "identity" : "fintechkids-modulo-injections-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/leonodev/fintechKids-modulo-injections-ios.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "05c13c38e1af1f43c72d78499893b89e36f7d4a3"
       }
     },
     {
