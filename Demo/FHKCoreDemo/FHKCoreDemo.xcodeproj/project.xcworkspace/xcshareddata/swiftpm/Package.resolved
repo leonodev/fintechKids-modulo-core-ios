@@ -29,15 +29,6 @@
       }
     },
     {
-      "identity" : "fintechkids-modulo-core-ios",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/leonodev/fintechKids-modulo-core-ios.git",
-      "state" : {
-        "branch" : "main",
-        "revision" : "b60e540b0b1a85a6edcd833986b281114dc49297"
-      }
-    },
-    {
       "identity" : "fintechkids-modulo-designsystem-ios",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/leonodev/fintechKids-modulo-designsystem-ios.git",
@@ -52,7 +43,7 @@
       "location" : "https://github.com/leonodev/fintechKids-modulo-injections-ios.git",
       "state" : {
         "branch" : "main",
-        "revision" : "05c13c38e1af1f43c72d78499893b89e36f7d4a3"
+        "revision" : "607e617ee4637ef99aaeeeff6ded23a4b5b98168"
       }
     },
     {
