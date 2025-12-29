@@ -57,23 +57,23 @@ public func withOverrides<R>(
     return try body()
 }
 
-// Subscript para acceso con KeyPath (como tenías originalmente)
-subscript<T: Sendable>(keyPath: KeyPath<DependenciesInjection, T>, type: T.Type) -> T {
-    get { get(type) }
-}
-
-// Subscript para acceso directo por tipo
-subscript<T: Sendable>(_ type: T.Type) -> T {
-    get { get(type) }
-    set { set(newValue, for: type) }
-}
-
-// check if it exists previously
-public func contains<T>(_ type: T.Type) -> Bool {
-    lock.lock()
-    defer { lock.unlock() }
-    return storage[ObjectIdentifier(type)] != nil
-}
+    // Subscript para acceso con KeyPath (como tenías originalmente)
+    public subscript<T: Sendable>(keyPath: KeyPath<DependenciesInjection, T>, type: T.Type) -> T {
+        get { get(type) }
+    }
+    
+    // Subscript para acceso directo por tipo
+    public subscript<T: Sendable>(_ type: T.Type) -> T {
+        get { get(type) }
+        set { set(newValue, for: type) }
+    }
+    
+    // check if it exists previously
+    public func contains<T>(_ type: T.Type) -> Bool {
+        lock.lock()
+        defer { lock.unlock() }
+        return storage[ObjectIdentifier(type)] != nil
+    }
 }
 
 // Property wrapper
