@@ -17,7 +17,9 @@ public struct NavigationContainer<Destination: NavigationDestination, Root: View
         router: NavigationRouter<Destination> = NavigationRouter(),
         @ViewBuilder root: () -> Root
     ) {
-        self._router = State(initialValue: router)
+//        self._router = State(initialValue: router)
+//        self.rootView = root()
+        self.router = router
         self.rootView = root()
     }
     
