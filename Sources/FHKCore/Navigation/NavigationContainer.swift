@@ -14,7 +14,7 @@ public struct NavigationContainer<Destination: NavigationDestination, Root: View
     private let rootView: Root
     
     public init(
-        router: NavigationRouter<Destination> = NavigationRouter(),
+        router: NavigationRouter<Destination>,
         @ViewBuilder root: () -> Root
     ) {
 //        self._router = State(initialValue: router)
@@ -30,7 +30,9 @@ public struct NavigationContainer<Destination: NavigationDestination, Root: View
 //                    buildDestination(destination)
 //                }
 //        }
-        NavigationStack(path: Bindable(router).path) {
+        @Bindable var bindableRouter = router
+        
+        NavigationStack(path: $bindableRouter.path) {
             rootView
                 .navigationDestination(for: Destination.self) { destination in
                     buildDestination(destination)

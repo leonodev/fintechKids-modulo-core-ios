@@ -1,5 +1,5 @@
 {
-  "originHash" : "537498bfa48158941a490bd9d86a0146f0024c7085c94679787fc59e340c6148",
+  "originHash" : "940fb8adfe8b8d1e39f5b0bd6c3c2c4f8fe0b79fa0b522d9afec85cc5402a049",
   "pins" : [
     {
       "identity" : "abseil-cpp-binary",
@@ -35,6 +35,15 @@
       "state" : {
         "revision" : "4396fc3904b008771d0748ab60cce4c948e1db16",
         "version" : "1.0.4"
+      }
+    },
+    {
+      "identity" : "fintechkids-modulo-injections-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/leonodev/fintechKids-modulo-injections-ios.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "c76ad46f38ff51048fa02b83384ce190eced6785"
       }
     },
     {
