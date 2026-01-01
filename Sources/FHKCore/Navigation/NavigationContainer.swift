@@ -9,7 +9,8 @@ import Foundation
 import SwiftUI
 
 public struct NavigationContainer<Destination: NavigationDestination, Root: View>: View {
-    @State private var router: NavigationRouter<Destination>
+    //@State private var router: NavigationRouter<Destination>
+    var router: NavigationRouter<Destination>
     private let rootView: Root
     
     public init(
@@ -21,7 +22,13 @@ public struct NavigationContainer<Destination: NavigationDestination, Root: View
     }
     
     public var body: some View {
-        NavigationStack(path: $router.path) {
+//        NavigationStack(path: $router.path) {
+//            rootView
+//                .navigationDestination(for: Destination.self) { destination in
+//                    buildDestination(destination)
+//                }
+//        }
+        NavigationStack(path: Bindable(router).path) {
             rootView
                 .navigationDestination(for: Destination.self) { destination in
                     buildDestination(destination)
