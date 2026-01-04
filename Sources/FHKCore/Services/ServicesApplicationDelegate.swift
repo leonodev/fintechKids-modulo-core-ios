@@ -42,7 +42,7 @@ open class ServicesApplicationDelegate: UIResponder, UIApplicationDelegate {
     ///
     /// The result is calculated using a `reduce` operation: if any service returns `false`,
     /// the final result will be `false`, signaling a startup failure to the system.
-    public func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+    open func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         return servicesArray.reduce(true) { result, service in
             let serviceResult = service.application?(application, didFinishLaunchingWithOptions: launchOptions) ?? true
             return result && serviceResult
@@ -55,7 +55,7 @@ open class ServicesApplicationDelegate: UIResponder, UIApplicationDelegate {
     /// - Parameters:
     ///   - application: The singleton app object.
     ///   - deviceToken: A token that identifies the device to APNs.
-    public func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+    open func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         servicesArray.forEach {
             $0.application?(application, didRegisterForRemoteNotificationsWithDeviceToken: deviceToken)
         }
@@ -65,7 +65,7 @@ open class ServicesApplicationDelegate: UIResponder, UIApplicationDelegate {
     /// - Parameters:
     ///   - application: The singleton app object.
     ///   - error: An error object that encapsulates the reason for the failure.
-    public func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+    open func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
         servicesArray.forEach {
             $0.application?(application, didFailToRegisterForRemoteNotificationsWithError: error)
         }
