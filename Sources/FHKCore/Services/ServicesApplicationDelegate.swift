@@ -23,7 +23,9 @@ open class ServicesApplicationDelegate: UIResponder, UIApplicationDelegate {
     
     /// The list of services to be injected into the application lifecycle.
     /// Subclasses must override this property to provide specific services (e.g., Firebase, Analytics, Push).
-    public var services: [ApplicationService] { [] }
+    open var services: [ApplicationService] {
+        return []
+    }
     
     /// Internal lazy storage for the initialized services to ensure they are only created once.
     private lazy var servicesArray: [ApplicationService] = {
