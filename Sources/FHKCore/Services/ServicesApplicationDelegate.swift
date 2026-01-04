@@ -19,7 +19,7 @@ public protocol ApplicationService: UIApplicationDelegate, UNUserNotificationCen
 /// This class follows the **Composite Design Pattern**, delegating system events
 /// to a collection of specialized service objects.
 @MainActor
-public class ServicesApplicationDelegate: UIResponder, UIApplicationDelegate {
+open class ServicesApplicationDelegate: UIResponder, UIApplicationDelegate {
     
     /// The list of services to be injected into the application lifecycle.
     /// Subclasses must override this property to provide specific services (e.g., Firebase, Analytics, Push).
