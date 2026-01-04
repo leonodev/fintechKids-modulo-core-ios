@@ -19,11 +19,11 @@ public protocol ApplicationService: UIApplicationDelegate, UNUserNotificationCen
 /// This class follows the **Composite Design Pattern**, delegating system events
 /// to a collection of specialized service objects.
 @MainActor
-open class ServicesApplicationDelegate: UIResponder, UIApplicationDelegate {
+public class ServicesApplicationDelegate: UIResponder, UIApplicationDelegate {
     
     /// The list of services to be injected into the application lifecycle.
     /// Subclasses must override this property to provide specific services (e.g., Firebase, Analytics, Push).
-    open var services: [ApplicationService] { [] }
+    public var services: [ApplicationService] { [] }
     
     /// Internal lazy storage for the initialized services to ensure they are only created once.
     private lazy var servicesArray: [ApplicationService] = {
