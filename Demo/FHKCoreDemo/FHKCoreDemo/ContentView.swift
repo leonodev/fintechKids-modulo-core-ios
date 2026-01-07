@@ -68,8 +68,6 @@ public enum AuthRoute: String, NavigationDestination {
 public struct ContentView: View {
     @NavigationRouterWrapper<AuthRoute> private var router
     
-    public init() {}
-    
     public var body: some View {
         VStack {
             Image(systemName: "globe")

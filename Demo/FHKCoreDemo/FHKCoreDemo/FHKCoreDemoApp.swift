@@ -10,9 +10,11 @@ import FHKCore
 
 @main
 struct FHKCoreDemoApp: App {
+    @State private var appRouter = NavigationRouter<AuthRoute>()
+    
     var body: some Scene {
         WindowGroup {
-            NavigationContainer<AuthRoute, ContentView> {
+            NavigationContainer(router: appRouter) {
                 ContentView()
             }
         }

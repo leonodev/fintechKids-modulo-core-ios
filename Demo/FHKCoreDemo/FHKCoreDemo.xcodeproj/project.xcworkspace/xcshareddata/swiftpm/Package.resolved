@@ -25,7 +25,7 @@
       "location" : "https://github.com/leonodev/fintechKids-modulo-config-ios.git",
       "state" : {
         "branch" : "main",
-        "revision" : "563e4f33398f414b0b5d2a6218a828111fbba175"
+        "revision" : "0b50d79a4caa98d5f0b270b19c95e80f29805aa2"
       }
     },
     {
@@ -43,7 +43,7 @@
       "location" : "https://github.com/leonodev/fintechKids-modulo-injections-ios.git",
       "state" : {
         "branch" : "main",
-        "revision" : "607e617ee4637ef99aaeeeff6ded23a4b5b98168"
+        "revision" : "c76ad46f38ff51048fa02b83384ce190eced6785"
       }
     },
     {
