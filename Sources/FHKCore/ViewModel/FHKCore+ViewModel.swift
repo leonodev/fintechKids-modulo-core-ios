@@ -10,7 +10,7 @@ import Combine
 
 public extension FHKCore {
     @MainActor
-    protocol ViewModel: ObservableObject {
+    protocol ViewModel {
         associatedtype Action: Equatable
         func action(_ action: Action) async
     }
