@@ -19,7 +19,6 @@ public extension FHKCore {
 
 public extension FHKCore {
     public enum State<T> {
-        case none
         case loading
         case loaded(T?)
         case error(Error)
