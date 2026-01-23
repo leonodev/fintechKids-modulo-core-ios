@@ -98,6 +98,9 @@ public final class HostingController<Content: View>: UIHostingController<Content
 
 
 public struct HostingControllerWrapper: UIViewControllerRepresentable {
+    
+    public init() {}
+    
     public func makeUIViewController(context: Context) -> UIViewController {
         HostingController(rootView: EmptyView())
     }
