@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import FHKDesignSystem
 
 public struct NavigationContainer<Destination: NavigationDestination, Root: View>: View {
     //@State private var router: NavigationRouter<Destination>
@@ -57,6 +58,7 @@ public struct NavigationContainer<Destination: NavigationDestination, Root: View
     private func buildDestination(_ destination: Destination) -> some View {
         destination.view()
             .navigationTitle(destination.title ?? "")
+            .foregroundStyle(FHKColor.basicWhite)
             .navigationBarBackButtonHidden(destination.hidesNavigationBar)
             .toolbar {
                 renderToolbarItems()
