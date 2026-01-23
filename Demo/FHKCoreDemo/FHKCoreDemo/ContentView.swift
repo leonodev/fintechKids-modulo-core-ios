@@ -321,5 +321,5 @@ public struct DetailView: View {
 
 
 #Preview {
-    ContentView()
+    RegisterView()
 }

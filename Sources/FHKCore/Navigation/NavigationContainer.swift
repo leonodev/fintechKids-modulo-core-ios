@@ -10,7 +10,6 @@ import SwiftUI
 import FHKDesignSystem
 
 public struct NavigationContainer<Destination: NavigationDestination, Root: View>: View {
-    //@State private var router: NavigationRouter<Destination>
     var router: NavigationRouter<Destination>
     private let rootView: Root
     
@@ -18,19 +17,12 @@ public struct NavigationContainer<Destination: NavigationDestination, Root: View
         router: NavigationRouter<Destination>,
         @ViewBuilder root: () -> Root
     ) {
-//        self._router = State(initialValue: router)
-//        self.rootView = root()
         self.router = router
         self.rootView = root()
+        configureNavigationBarAppearance()
     }
     
     public var body: some View {
-//        NavigationStack(path: $router.path) {
-//            rootView
-//                .navigationDestination(for: Destination.self) { destination in
-//                    buildDestination(destination)
-//                }
-//        }
         @Bindable var bindableRouter = router
         
         NavigationStack(path: $bindableRouter.path) {
@@ -58,7 +50,6 @@ public struct NavigationContainer<Destination: NavigationDestination, Root: View
     private func buildDestination(_ destination: Destination) -> some View {
         destination.view()
             .navigationTitle(destination.title ?? "")
-            .foregroundStyle(FHKColor.basicWhite)
             .navigationBarBackButtonHidden(destination.hidesNavigationBar)
             .toolbar {
                 renderToolbarItems()
@@ -78,4 +69,21 @@ public struct NavigationContainer<Destination: NavigationDestination, Root: View
             }
         }
     }
+}
+
+private func configureNavigationBarAppearance() {
+    let appearance = UINavigationBarAppearance()
+    appearance.configureWithOpaqueBackground()
+    appearance.backgroundColor = UIColor.clear
+
+    appearance.titleTextAttributes = [
+        .foregroundColor: UIColor.white
+    ]
+
+    appearance.largeTitleTextAttributes = [
+        .foregroundColor: UIColor.white
+    ]
+
+    UINavigationBar.appearance().standardAppearance = appearance
+    UINavigationBar.appearance().scrollEdgeAppearance = appearance
 }
