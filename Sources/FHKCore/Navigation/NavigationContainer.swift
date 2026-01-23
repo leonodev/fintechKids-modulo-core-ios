@@ -87,3 +87,20 @@ private func configureNavigationBarAppearance() {
     UINavigationBar.appearance().standardAppearance = appearance
     UINavigationBar.appearance().scrollEdgeAppearance = appearance
 }
+
+
+public final class HostingController<Content: View>: UIHostingController<Content> {
+
+    public override var preferredStatusBarStyle: UIStatusBarStyle {
+        .lightContent
+    }
+}
+
+
+public struct HostingControllerWrapper: UIViewControllerRepresentable {
+    public func makeUIViewController(context: Context) -> UIViewController {
+        HostingController(rootView: EmptyView())
+    }
+
+    public func updateUIViewController(_ uiViewController: UIViewController, context: Context) {}
+}
