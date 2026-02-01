@@ -18,7 +18,7 @@ public extension FHKCore {
 
 
 public extension FHKCore {
-    public enum State<T> {
+    public enum State {
         case loading
         case loaded
         case error
