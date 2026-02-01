@@ -20,15 +20,8 @@ public extension FHKCore {
 public extension FHKCore {
     public enum State<T> {
         case loading
-        case loaded(T?)
-        case error(Error)
-        
-        public var data: T? {
-            if case let .loaded(value) = self {
-                return value
-            }
-            return nil
-        }
+        case loaded
+        case error
           
         public var isLoading: Bool {
             if case .loading = self {
