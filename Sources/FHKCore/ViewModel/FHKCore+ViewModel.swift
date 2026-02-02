@@ -22,6 +22,7 @@ public extension FHKCore {
         case loading
         case loaded
         case error
+        case finish
           
         public var isLoading: Bool {
             if case .loading = self {
