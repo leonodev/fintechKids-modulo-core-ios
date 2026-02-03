@@ -16,13 +16,12 @@ public extension FHKCore {
     }
 }
 
-
 public extension FHKCore {
-    public enum State {
+    public enum State<T: Equatable>: Equatable {
         case loading
         case loaded
         case error
-        case finish
+        case finish(T?)
           
         public var isLoading: Bool {
             if case .loading = self {
