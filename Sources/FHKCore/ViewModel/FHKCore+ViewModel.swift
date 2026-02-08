@@ -20,7 +20,7 @@ public extension FHKCore {
     public enum State<T: Equatable>: Equatable {
         case loading
         case loaded
-        case error(CrashlyticsError)
+        case error(Log)
         case finish(T?)
           
         public var isLoading: Bool {
