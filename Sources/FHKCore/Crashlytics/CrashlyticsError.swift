@@ -20,8 +20,8 @@ public struct CrashlyticsError: Error, Equatable {
         Crashlytics.crashlytics().log(log.message)
         
         // Si hay atributos, los añadimos como Custom Keys (son buscables en el dashboard)
-        if let attributes = log.attributes {
-            for (key, value) in attributes {
+        if let attributesDict = log.attributes?.dictionary {
+            for (key, value) in attributesDict {
                 Crashlytics.crashlytics().setCustomValue(value, forKey: key)
             }
         }
@@ -33,15 +33,8 @@ public struct CrashlyticsError: Error, Equatable {
         
         // Debug local
 #if DEBUG
-        Logger.error("🚀 [CrashlyticsError] \(log.message) | Extras: \(log.attributes ?? [:])")
+        Logger.error("🚀 [CrashlyticsError] \(log.message) | Extras: \(log.attributes?.dictionary ?? [:])")
 #endif
     }
 }
-
-/*
- CrashlyticsError(Log(
-     message: "error",
-     attributes: ["id" : 1223]
- ))
- */
 
