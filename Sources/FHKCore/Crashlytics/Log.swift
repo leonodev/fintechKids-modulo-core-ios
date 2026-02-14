@@ -8,12 +8,12 @@
 import Foundation
 
 public struct Log: Equatable {
-    public let attributes: LogAttributes?
     public let error: Error
+    public let attributes: LogAttributes?
 
-    public init(attributes: LogAttributes? = nil, error: Error) {
-        self.attributes = attributes
+    public init(error: Error, attributes: LogAttributes? = nil) {
         self.error = error
+        self.attributes = attributes
     }
 
     public static func == (lhs: Log, rhs: Log) -> Bool {
