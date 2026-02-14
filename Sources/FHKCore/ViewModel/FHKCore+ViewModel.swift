@@ -15,8 +15,8 @@ public extension FHKCore {
         func action(_ action: Action) async
     }
 }
-extension FHKCore.ViewModel {
-    var nameAction: String {
+public extension FHKCore.ViewModel {
+    public var nameAction: String {
         String(describing: Self.self) + ".Action"
     }
 }
