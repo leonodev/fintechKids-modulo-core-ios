@@ -32,15 +32,14 @@ public struct LogAttributes: LogAttributesProtocol {
     
     public var platform: Platform?
     public var userID: String?
-    public var action: Action?
+    public var action: String?
     public var feature: FHKFeature?
     
     // Default initializer
     public init(
-        screenName: String? = nil,
         platform: Platform? = nil,
         userID: String? = nil,
-        action: Action? = nil,
+        action: String? = nil,
         feature: FHKFeature? = nil
     ) {
         self.platform = platform
@@ -53,7 +52,7 @@ public struct LogAttributes: LogAttributesProtocol {
     internal var dictionary: [String: Any] {
         var dict: [String: Any] = ["platform": platform?.name]
         if let userID = userID { dict["user_id"] = userID }
-        if let action = action { dict["action"] = action.name }
+        if let action = action { dict["action"] = action }
         if let feature = feature { dict["feature"] = feature.name }
         return dict
     }

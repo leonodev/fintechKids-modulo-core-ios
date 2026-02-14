@@ -15,6 +15,11 @@ public extension FHKCore {
         func action(_ action: Action) async
     }
 }
+extension FHKCore.ViewModel {
+    var nameAction: String {
+        String(describing: Self.self) + ".Action"
+    }
+}
 
 public extension FHKCore {
     public enum State<T: Equatable>: Equatable {
