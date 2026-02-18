@@ -25,7 +25,7 @@ public extension FHKCore {
     public enum State<T: Equatable>: Equatable {
         case loading
         case loaded
-        case error(Log)
+        case error(any FHKError)
         case finish(T?)
           
         public var isLoading: Bool {
@@ -40,6 +40,25 @@ public extension FHKCore {
                 return true
             }
             return false
+        }
+        
+        public static func == (lhs: State<T>, rhs: State<T>) -> Bool {
+            switch (lhs, rhs) {
+            case (.loading, .loading):
+                return true
+                
+            case (.loaded, .loaded):
+                return true
+                
+            case (.finish(let lVal), .finish(let rVal)):
+                return lVal == rVal
+                
+            case (.error(let lErr), .error(let rErr)):
+                return lErr.localizedDescription == rErr.localizedDescription
+                
+            default:
+                return false
+            }
         }
     }
 }
