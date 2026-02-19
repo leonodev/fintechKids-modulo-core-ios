@@ -3,4 +3,6 @@
 
 public enum FHKCore {}
 
-public protocol FHKError: Error, Equatable {}
+public protocol FHKError: Error, Equatable {
+    var logMessage: String { get }
+}
