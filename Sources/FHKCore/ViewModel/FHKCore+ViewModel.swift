@@ -42,6 +42,11 @@ public extension FHKCore {
             return false
         }
         
+        public var isError: Bool {
+            if case .error = self { return true }
+            return false
+        }
+        
         public static func == (lhs: State<T>, rhs: State<T>) -> Bool {
             switch (lhs, rhs) {
             case (.loading, .loading):
