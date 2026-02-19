@@ -9,5 +9,5 @@ public protocol FHKError: Error, Equatable {
 }
 
 public extension FHKError {
-    var isShouldTrack: Bool { true }
+    public var isShouldTrack: Bool { true }
 }
