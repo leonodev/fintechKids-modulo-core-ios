@@ -28,6 +28,8 @@ public final class ServicesAPI: ServicesAPIProtocol {
      let plistFileName = "ServicesAPI"
      let plistExtension = "plist"
     
+    public init() {}
+    
     public func getURL(environment: EnvironmentType,
                               language: LanguageType,
                               serviceKey: ServiceType) throws -> String {
