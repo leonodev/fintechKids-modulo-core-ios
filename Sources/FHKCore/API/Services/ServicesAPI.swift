@@ -7,6 +7,7 @@
 
 import Foundation
 import FHKConfig
+import FHKInjections
 
 public enum APIConfigError: Error {
     case fileNotFound(name: String)
@@ -15,16 +16,20 @@ public enum APIConfigError: Error {
     case invalidType
 }
 
-public enum ServiceType : String {
+public enum ServiceType: String {
     case supabase = "supabase"
 }
 
-public struct ServicesAPI {
-    private static let plistFileName = "ServicesAPI"
-    private static let plistExtension = "plist"
+public protocol ServicesAPIProtocol: FHKInjectableProtocol {
+    func getURL(environment: EnvironmentType, language: LanguageType, serviceKey: ServiceType) throws -> String
+}
+
+public final class ServicesAPI: ServicesAPIProtocol {
+     let plistFileName = "ServicesAPI"
+     let plistExtension = "plist"
     
-    public static func getURL(environment: Configuration.EnvironmentType = Configuration.getEnvironment(),
-                              language: Configuration.LanguageType = Configuration.getLanguage(),
+    public func getURL(environment: EnvironmentType,
+                              language: LanguageType,
                               serviceKey: ServiceType) throws -> String {
         
         guard let url = Bundle.module.url(forResource: plistFileName, withExtension: plistExtension) else {
