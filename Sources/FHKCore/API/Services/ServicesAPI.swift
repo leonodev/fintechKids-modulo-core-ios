@@ -31,8 +31,8 @@ public final class ServicesAPI: ServicesAPIProtocol {
     public init() {}
     
     public func getURL(environment: EnvironmentType,
-                              language: LanguageType,
-                              serviceKey: ServiceType) throws -> String {
+                       language: LanguageType,
+                       serviceKey: ServiceType) throws -> String {
         
         guard let url = Bundle.module.url(forResource: plistFileName, withExtension: plistExtension) else {
             throw APIConfigError.fileNotFound(name: "\(plistFileName).\(plistExtension)")
