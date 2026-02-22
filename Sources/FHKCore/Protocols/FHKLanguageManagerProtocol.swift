@@ -5,6 +5,7 @@
 //  Created by Fredy Leon on 22/2/26.
 //
 
+import Foundation
 import FHKInjections
 import FHKConfig
 
