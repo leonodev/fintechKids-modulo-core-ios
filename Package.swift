@@ -18,21 +18,8 @@ let package = Package(
         .package(url: "https://github.com/firebase/firebase-ios-sdk.git",
             .upToNextMajor(from: "12.6.0")),
         
-        .package(url: "https://github.com/leonodev/fintechKids-modulo-utils-ios.git",
-                 exact: "1.0.2"),
-        
-        .package(url: "https://github.com/leonodev/fintechKids-modulo-config-ios.git",
-                 branch: "main"),
-        
-        .package(url: "https://github.com/leonodev/fintechKids-modulo-storage-ios.git",
-                 branch: "main"),
-        
-        .package(url: "https://github.com/leonodev/fintechKids-modulo-injections-ios.git",
-                 branch: "main"),
-        
-        .package(url: "https://github.com/leonodev/fintechKids-modulo-designsystem-ios.git",
-                 branch: "main")
-        
+        .package(url: "https://github.com/leonodev/fintechKids-modulo-domain-ios.git",
+                branch: "main")
         ],
     targets: [
         .target(
@@ -47,12 +34,8 @@ let package = Package(
                 .product(name: "FirebaseMessaging", package: "firebase-ios-sdk"),
                 .product(name: "FirebaseRemoteConfig", package: "firebase-ios-sdk"),
                 
-                // Modules
-                .product(name: "FHKUtils", package: "fintechKids-modulo-utils-ios"),
-                .product(name: "FHKConfig", package: "fintechKids-modulo-config-ios"),
-                .product(name: "FHKStorage", package: "fintechKids-modulo-storage-ios"),
-                .product(name: "FHKInjections", package: "fintechKids-modulo-injections-ios"),
-                .product(name: "FHKDesignSystem", package: "fintechKids-modulo-designsystem-ios")
+                // Modules FHK
+                .product(name: "FHKDomain", package: "fintechKids-modulo-domain-ios")
             ],
             resources: [
                 .process("Resources/Urls"),

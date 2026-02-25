@@ -6,23 +6,7 @@
 //
 
 import Foundation
-import FHKConfig
-import FHKInjections
-
-public enum APIConfigError: Error {
-    case fileNotFound(name: String)
-    case deserializationFailed
-    case keyNotFound(key: String)
-    case invalidType
-}
-
-public enum ServiceType: String {
-    case supabase = "supabase"
-}
-
-public protocol ServicesAPIProtocol: FHKInjectableProtocol {
-    func getURL(environment: EnvironmentType, language: LanguageType, serviceKey: ServiceType) throws -> String
-}
+import FHKDomain
 
 public final class ServicesAPI: ServicesAPIProtocol {
      let plistFileName = "ServicesAPI"
@@ -31,7 +15,6 @@ public final class ServicesAPI: ServicesAPIProtocol {
     public init() {}
     
     public func getURL(environment: EnvironmentType,
-                       language: LanguageType,
                        serviceKey: ServiceType) throws -> String {
         
         guard let url = Bundle.module.url(forResource: plistFileName, withExtension: plistExtension) else {
@@ -50,14 +33,18 @@ public final class ServicesAPI: ServicesAPIProtocol {
             throw APIConfigError.keyNotFound(key: environment.rawValue)
         }
         
-        // Search the  directory of language (EN/FR/ES/IT)
-        guard let languageDict = environmentDict[language.rawValue.uppercased()] as? [String: Any] else {
-            throw APIConfigError.keyNotFound(key: "\(environment) -> \(language)")
-        }
+//        // Search the  directory of language (EN/FR/ES/IT)
+//        guard let languageDict = environmentDict[language.rawValue.uppercased()] as? [String: Any] else {
+//            throw APIConfigError.keyNotFound(key: "\(environment) -> \(language)")
+//        }
+//        
+//        // Search the key of service
+//        guard let serviceURL = languageDict[serviceKey.rawValue] as? String else {
+//            throw APIConfigError.keyNotFound(key: "\(environment) -> \(language) -> \(serviceKey)")
+//        }
         
-        // Search the key of service
-        guard let serviceURL = languageDict[serviceKey.rawValue] as? String else {
-            throw APIConfigError.keyNotFound(key: "\(environment) -> \(language) -> \(serviceKey)")
+        guard let serviceURL = environmentDict[serviceKey.rawValue] as? String else {
+            throw APIConfigError.keyNotFound(key: "\(environment) -> \(serviceKey)")
         }
         
         return serviceURL

@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import Combine
+import FHKDomain
 
 public extension FHKCore {
     @MainActor

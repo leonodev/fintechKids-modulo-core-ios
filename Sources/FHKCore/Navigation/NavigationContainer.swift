@@ -7,7 +7,6 @@
 
 import Foundation
 import SwiftUI
-import FHKDesignSystem
 
 public struct NavigationContainer<Destination: NavigationDestination, Root: View>: View {
     var router: NavigationRouter<Destination>

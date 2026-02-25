@@ -6,8 +6,7 @@
 //
 
 import Foundation
-import FHKInjections
-import FHKConfig
+import FHKDomain
 
 public protocol FHKLanguageManagerProtocol: FHKInjectableProtocol {
     var selectedLanguage: String { get set }
