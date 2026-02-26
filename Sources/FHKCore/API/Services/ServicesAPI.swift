@@ -15,6 +15,7 @@ public final class ServicesAPI: ServicesAPIProtocol {
     public init() {}
     
     public func getURL(environment: EnvironmentType,
+                       country: Countries,
                        serviceKey: ServiceType) throws -> String {
         
         guard let url = Bundle.module.url(forResource: plistFileName, withExtension: plistExtension) else {
@@ -33,18 +34,14 @@ public final class ServicesAPI: ServicesAPIProtocol {
             throw APIConfigError.keyNotFound(key: environment.rawValue)
         }
         
-//        // Search the  directory of language (EN/FR/ES/IT)
-//        guard let languageDict = environmentDict[language.rawValue.uppercased()] as? [String: Any] else {
-//            throw APIConfigError.keyNotFound(key: "\(environment) -> \(language)")
-//        }
-//        
-//        // Search the key of service
-//        guard let serviceURL = languageDict[serviceKey.rawValue] as? String else {
-//            throw APIConfigError.keyNotFound(key: "\(environment) -> \(language) -> \(serviceKey)")
-//        }
+        // Search the  directory by country (EN/FR/ES/IT)
+        guard let languageDict = environmentDict[country.domain.uppercased()] as? [String: Any] else {
+            throw APIConfigError.keyNotFound(key: "\(environment) -> \(country.domain)")
+        }
         
-        guard let serviceURL = environmentDict[serviceKey.rawValue] as? String else {
-            throw APIConfigError.keyNotFound(key: "\(environment) -> \(serviceKey)")
+        // Search the key of service
+        guard let serviceURL = languageDict[serviceKey.rawValue] as? String else {
+            throw APIConfigError.keyNotFound(key: "\(environment) -> \(country.domain) -> \(serviceKey)")
         }
         
         return serviceURL
