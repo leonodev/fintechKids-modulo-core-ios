@@ -8,7 +8,7 @@
 import Foundation
 import FHKDomain
 
-public final class ServicesAPI: ServicesAPIProtocol {
+public final class FHKServicesAPI: FHKServicesAPIProtocol {
      let plistFileName = "ServicesAPI"
      let plistExtension = "plist"
     
