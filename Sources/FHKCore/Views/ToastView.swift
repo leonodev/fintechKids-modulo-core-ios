@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 import FHKDesignSystem
+import FHKDomain
 
 public struct ToastView: View {
     @Binding public var isVisible: Bool

@@ -7,7 +7,7 @@
 
 import SwiftUI
 import FHKDesignSystem
-import FHKCore
+import FHKDomain
 
 public extension View {
     func setToastStyle(isVisible: Binding<Bool>, info: FHKToastInfo) -> some View {
